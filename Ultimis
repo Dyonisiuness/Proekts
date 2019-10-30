@@ -1,0 +1,38 @@
+using System;
+class HelloWorld {
+  static void Main() {
+ string [,] pole=new string[3,3];
+            int [,] p1m=new int[3,3];
+            int [,] p2m=new int[3,3];
+            var pw = false;
+            int x = -1; int y = -1; int t=0; bool lie=false;
+            for(int i = 0;i<3;i++){for(int j=0;j<3;j++){pole[i,j]="/"; Console.Write("{0}\t",pole[i,j]);}Console.WriteLine();}
+            Console.WriteLine();
+            
+            do{
+                for(int i = 0;i<3;i++){for(int j=0;j<3;j++){Console.Write("{0}\t",pole[i,j]);}Console.WriteLine();}
+                if(lie==false){
+                Console.WriteLine("Ход Крестиков");
+                Console.WriteLine("Координата х");
+                x = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Координата у");
+                y = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(); t++;
+                if(pole[x-1,y-1]!="/"){Console.WriteLine("Нет, сее место уже принадлежит Ноликам/Крестикам"); lie=true;}
+                else{pole[x-1,y-1]="x";}} else{lie=false;}  if(lie==false){
+                for(int i = 0;i<3;i++){for(int j=0;j<3;j++){Console.Write("{0}\t",pole[i,j]);}Console.WriteLine();}
+                if(t==9){Console.WriteLine("Прекрасно, у вас ничья!"); pw = true; break;}
+                Console.WriteLine("Ход Ноликов");
+                Console.WriteLine("Координата х");
+                x = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Координата у");
+                y = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(); t++;
+                if(pole[x-1,y-1]!="/"){ Console.WriteLine("Нет, сее место уже принадлежит Ноликам/Крестикам.");
+                lie = true;
+                Console.WriteLine();
+                } 
+                else{pole[x-1,y-1]="o";}} else{lie = false;}
+            } while(pw==false);
+  }
+}
