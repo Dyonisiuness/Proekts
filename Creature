@@ -1,116 +1,300 @@
 using System;
+
 class HelloWorld {
+
   static void Main() {
+
       int [,] graph = new int[6,6];
+
       graph[0,3] = 1;
+
       graph[1,3] = 1;
+
       graph[2,3] = 1;
+
       graph[4,3] = 1;
+
       graph[5,3] = 1;      
+
       graph[3,0] = 1;
+
       graph[3,1] = 1;
+
       graph[3,2] = 1;
+
       graph[3,4] = 1;
+
       graph[3,5] = 1;
+
       for(int i = 0;i<6;i++)
+
       {for(int j = 0;j<6;j++){
+
         Console.Write("{0}\t", graph[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       graph[4,5] = 1; graph[5,0] = 1; graph[0,3] = 1;
+
       graph[0,1] = 1;
+
       graph[1,2] = 1;
+
       graph[5,4] = 1; graph[0,5] = 1; graph[3,0] = 1;
+
       graph[1,0] = 1;
+
       graph[2,1] = 1;
+
       for(int i = 0;i<6;i++)
+
       {for(int j = 0;j<6;j++){
+
         Console.Write("{0}\t", graph[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }
+
       Console.WriteLine();
+
       //-------------------------------------
+
       graph[0,1] = 1;
+
       graph[1,2] = 1;
+
       graph[2,3] = 1;
+
       graph[3,4] = 1;
+
       graph[4,5] = 1;
+
       graph[5,4] = 1;
+
       graph[1,0] = 1;
+
       graph[2,1] = 1;
+
       graph[3,2] = 1;
+
       graph[4,3] = 1;
+
       graph[5,4] = 1;
+
       for(int i = 0;i<6;i++)
+
       {for(int j = 0;j<6;j++){
+
         Console.Write("{0}\t", graph[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       for(int i = 0;i<6;i++)
+
       {for(int j = 0;j<6;j++){
+
           if(i!=j)
+
           {graph[i,j] = 1;}
+
         Console.Write("{0}\t", graph[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       int [,] g = new int[5,5];
+
       
+
       g[1,2] = 1; g[0,3] = 1;
+
       g[3,2] = 1;g[2,4] = 1;
+
       g[2,1] = 1; g[3,0] = 1;
+
       g[2,3] = 1;g[4,2] = 1;
+
       for(int i = 0;i<4;i++)
+
       {for(int j = 0;j<4;j++){
+
         Console.Write("{0}\t", g[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       g[1,4] = 1; g[0,3] = 1;
+
       g[1,2] = 1;g[2,3] = 1;
+
       g[4,1] = 1; g[3,0] = 1;
+
       g[2,1] = 1;g[3,2] = 1;
+
       for(int i = 0;i<4;i++)
+
       {for(int j = 0;j<4;j++){
+
         Console.Write("{0}\t", g[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       g[1,2] = 1; g[4,3] = 1;
+
       g[3,0] = 1;g[2,4] = 1;
+
       g[2,1] = 1; g[3,4] = 1;
+
       g[0,3] = 1;g[4,2] = 1;
+
       for(int i = 0;i<4;i++)
+
       {for(int j = 0;j<4;j++){
+
         Console.Write("{0}\t", g[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       g[1,0] = 1; g[0,3] = 1;
+
       g[4,0] = 1;g[2,3] = 1;
+
       g[2,1] = 1; g[3,0] = 1;
+
       g[0,4] = 1;g[3,2] = 1;
+
       for(int i = 0;i<4;i++)
+
       {for(int j = 0;j<4;j++){
+
         Console.Write("{0}\t", g[i,j]) ; 
+
       }
+
       Console.WriteLine();
+
       }Console.WriteLine();
+
       //------------------------------------
+
       int [,] h = new int[5,5]{{0,1,1,1,-1},{-1,0,1,-1,-1},
+
       {-1,-1,0,1,-1},{-1,-1,-1,0,-1},{-1,-1,1,-1,0}};
+
       for(int i = 0;i<5;i++)
       {for(int j = 0;j<5;j++){
         Console.Write("{0}\t", h[i,j]) ; 
       }Console.WriteLine();}
+      Console.WriteLine();
+      //------------------------------------
+      int [,] J = new int[5,5]{{0,1,0,0,0},{1,0,1,1,0},
+      {0,1,0,1,0},{0,1,1,0,1},{0,0,0,1,0}};
+      int[]T=new int[5];
+      int F=0;
+      int Res=0;
+        for(int i = 0;i<5;i++)
+      {for(int j = 0;j<5;j++){
+          if(J[i,j]==1){T[i]=1; F=F+1;}
+          Console.Write("{0}\t", J[i,j]) ; 
+      }Console.WriteLine();}
+      for(int i=0;i<5;i++){Res=Res+T[i];}
+      if(J[0,4]==J[4,0]&&J[4,0]==1){Console.WriteLine("Циклический");}
+      else{Console.WriteLine("Не Циклический");}
+      if(Res==5){Console.WriteLine("Связаный");}
+      else{Console.WriteLine("Не связаный");}
+      if(F==20){Console.WriteLine("полный");} 
+      else{Console.WriteLine("не полный");}
+      //------------------------------------
+      int [,] Q = new int[5,5]{{0,1,0,0,0},{1,0,1,0,0},
+      {0,1,0,1,0},{0,0,1,0,0},{0,0,0,0,0}};
+      int[]W=new int[5];
+      F=0;
+      Res=0;
+        for(int i = 0;i<5;i++)
+      {for(int j = 0;j<5;j++){
+          if(Q[i,j]==1){W[i]=1; F=F+1;}
+          Console.Write("{0}\t", Q[i,j]) ; 
+      }Console.WriteLine();}
+      for(int i=0;i<5;i++){Res=Res+W[i];}
+      if(Q[0,4]==Q[4,0]&&Q[4,0]==1){Console.WriteLine("Циклический");}
+      else{Console.WriteLine("Не Циклический");}
+      if(Res==5){Console.WriteLine("Связаный");}
+      else{Console.WriteLine("Не связаный");}
+      if(F==20){Console.WriteLine("полный");} 
+      else{Console.WriteLine("не полный");}
+      //------------------------------------
+      int [,] E = new int[5,5]{{0,1,1,1,1},{1,0,1,1,1},
+      {1,1,0,1,1},{1,1,1,0,1},{1,1,1,1,0}};
+      int[]R=new int[5];
+       F=0;
+       Res=0;
+        for(int i = 0;i<5;i++)
+      {for(int j = 0;j<5;j++){
+          if(E[i,j]==1){R[i]=1; F=F+1;}
+          Console.Write("{0}\t", E[i,j]) ; 
+      }Console.WriteLine();}
+      for(int i=0;i<5;i++){Res=Res+R[i];}
+      if(E[0,4]==E[4,0]&&E[4,0]==1){Console.WriteLine("Циклический");}
+      else{Console.WriteLine("Не Циклический");}
+      if(Res==5){Console.WriteLine("Связаный");}
+      else{Console.WriteLine("Не связаный");}
+      if(F==20){Console.WriteLine("полный");} 
+      else{Console.WriteLine("не полный");}
+      //------------------------------------
+      int [,] A = new int[5,5]{{0,1,0,0,1},{1,0,1,0,0},
+      {0,1,0,1,0},{0,0,1,0,1},{1,0,0,1,0}};
+      int[]S=new int[5];
+       F=0;
+       Res=0;
+        for(int i = 0;i<5;i++)
+      {for(int j = 0;j<5;j++){
+          if(A[i,j]==1){S[i]=1; F=F+1;}
+          Console.Write("{0}\t", A[i,j]) ; 
+      }Console.WriteLine();}
+      for(int i=0;i<5;i++){Res=Res+R[i];}
+      if(A[0,4]==A[4,0]&&A[4,0]==1){Console.WriteLine("Циклический");}
+      else{Console.WriteLine("Не Циклический");}
+      if(Res==5){Console.WriteLine("Связаный");}
+      else{Console.WriteLine("Не связаный");}
+      if(F==20){Console.WriteLine("полный");} 
+      else{Console.WriteLine("не полный");}
   }
+
 }
