@@ -1,0 +1,22 @@
+      int[,] Arr = new int[5,7]{{1,0,0,0,1,0,0},
+      {1,1,0,0,0,1,1},{0,1,1,0,0,0,0},
+      {0,0,1,1,0,0,1},{0,0,0,1,1,1,0}};
+      int[,] CP = new int[5,7];      
+      int[,] historika = new int[5,7];
+      int T=0;
+      for(int i = 0;i<5;i++)
+      {for(int j = 0;j<7;j++){Console.Write("{0}\t", Arr[i,j]);}Console.WriteLine();}
+      for(t=0;t<15;t++){
+          for(int i = 0;i<5;i++){
+              for(int j = 0;j<7;j++){
+                  for(int p=0;p<7;p++){ bool FT = true;
+                        if(Arr[i,j+p]==1&&historika>=3){
+                            CP[i,j+p]==1;  if(FT==true){FT=false;}else{}
+                        }}
+              }
+              
+          }
+          
+      }
+      
+}}
