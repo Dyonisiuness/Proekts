@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            //    ArrayList g = new ArrayList();
+            //    ArrayList list = new ArrayList();
+            int[] g = new int[7];
+            bool f = true;
+            int k = 1;
+            bool[] p = new bool[7];
+            int[,] graph = new int[7, 7]{{0,1,1,0,0,0,1},
+    {1,0,1,1,0,0,0},
+    {1,1,0,0,0,0,0},{0,1,0,0,1,0,0},{0,0,0,1,0,1,0},
+    {0,0,0,0,1,0,1},{1,0,0,0,0,1,0}};
+            /*
+            for(int i=0;i<7;i++){
+                for(int j=0;j<7;j++){
+                 Console.Write("  {0}",graph[i,j]);   
+                }
+                Console.WriteLine();
+            }*/
+            /*    for(int i=0;i<7;i++){
+                    if()}*/
+            g[0] = 1; g[1] = 0; g[2] = 0;
+            g[3] = 0; g[4] = 0; g[5] = 0; g[6] = 0;
+
+
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    if (graph[i, j] == 1) { 
+                    f = true;
+                    for (int x = 0; x < 7; x++)
+                    {
+
+                        if (g[x] == j + 1) { f = false;
+                           /*   for (int C = 0; C < 6; C++){
+                                    if (graph[g[x], 1] == 1) { Console.WriteLine("{0}-->{1}", g[x], 1); }
+                               }*/
+
+                            }
+
+                    }
+                    Console.WriteLine(f);
+                    if (f == true && k < 7)
+                    {
+                        g[k] = j + 1;
+                        k++;
+                           
+                    }
+                    Console.WriteLine("_____________" + i + j + graph[i, j]);
+                    for (int a = 0; a < 7; a++)
+                    {
+                        Console.WriteLine(g[a]);
+
+                    }
+                }
+
+                }
+
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 7; i++) {
+                Console.WriteLine(g[i]);
+            }
+
+            /*
+                for(int j=0;j<7;j++){
+                    if([i,Convert.ToInt32(g[j])]==graph[j,i] && graph[j,i]==1){
+                        Console.WriteLine("{0}-->{1}",g[i],j+1);
+                        
+                   }
+                }
+            }
+            
+        }*/
+            Console.ReadLine();
+            //////////////////////////////////////////////////////////////////////////////////////////////////            //////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+      /*      for (int F = 0; F < 7; F++)
+            {
+                for (int C = 0; C < 7; C++)
+                {
+                    if (graph[g[F], C] == 1) { Console.WriteLine("{0}-->{1}", g[F], C); }
+                }
+
+            }*/
+
+
+
+        }
+    }
+}
